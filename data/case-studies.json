@@ -1,0 +1,53 @@
+[
+  {
+    "id": "tech-startup-growth",
+    "title": "Scaling a Tech Startup from Series A to IPO",
+    "client": "TechFlow Inc.",
+    "industry": "SaaS Technology",
+    "challenge": "TechFlow needed strategic guidance to scale operations, improve product-market fit, and prepare for public offering within 24 months.",
+    "solution": "We developed a comprehensive growth strategy focusing on market expansion, operational excellence, and financial optimization. Our team implemented data-driven decision frameworks and established key performance metrics.",
+    "results": [
+      "400% revenue growth in 18 months",
+      "Successful IPO raising $250M",
+      "Expanded to 15 new markets",
+      "Improved operational efficiency by 60%"
+    ],
+    "image": "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    "tags": ["Growth Strategy", "IPO", "SaaS", "Scaling"],
+    "href": "/case-studies/tech-startup-growth"
+  },
+  {
+    "id": "retail-digital-transformation",
+    "title": "Digital Transformation for Legacy Retailer",
+    "client": "Heritage Retail Group",
+    "industry": "Retail & E-commerce",
+    "challenge": "A 50-year-old retail chain struggling with declining in-store sales and limited digital presence needed complete digital transformation.",
+    "solution": "We architected an omnichannel strategy integrating online and offline experiences, implemented advanced analytics for personalization, and modernized their technology infrastructure.",
+    "results": [
+      "300% increase in online sales",
+      "45% improvement in customer satisfaction",
+      "Reduced operational costs by 25%",
+      "Launched successful mobile app with 1M+ downloads"
+    ],
+    "image": "https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    "tags": ["Digital Transformation", "Retail", "Omnichannel", "Analytics"],
+    "href": "/case-studies/retail-digital-transformation"
+  },
+  {
+    "id": "manufacturing-optimization",
+    "title": "Manufacturing Process Optimization",
+    "client": "Precision Manufacturing Co.",
+    "industry": "Manufacturing",
+    "challenge": "Manufacturing company facing quality issues, high waste rates, and inefficient production processes needed comprehensive operational overhaul.",
+    "solution": "We implemented lean manufacturing principles, deployed IoT sensors for real-time monitoring, and established continuous improvement programs with employee engagement initiatives.",
+    "results": [
+      "50% reduction in waste and defects",
+      "30% increase in production efficiency",
+      "Improved worker safety by 40%",
+      "Annual savings of $2.5M"
+    ],
+    "image": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+    "tags": ["Process Optimization", "Manufacturing", "Lean", "IoT"],
+    "href": "/case-studies/manufacturing-optimization"
+  }
+]

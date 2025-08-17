@@ -1,0 +1,54 @@
+[
+  {
+    "id": "strategy-consulting",
+    "title": "Strategy Consulting",
+    "description": "Transform your business with data-driven strategic insights and actionable recommendations that drive sustainable growth.",
+    "icon": "TrendingUp",
+    "features": [
+      "Market Analysis & Competitive Intelligence",
+      "Strategic Planning & Roadmap Development",
+      "Business Model Innovation",
+      "Performance Measurement & KPIs"
+    ],
+    "href": "/services/strategy-consulting"
+  },
+  {
+    "id": "digital-transformation",
+    "title": "Digital Transformation",
+    "description": "Accelerate your digital journey with comprehensive transformation strategies that modernize operations and enhance customer experience.",
+    "icon": "Zap",
+    "features": [
+      "Digital Strategy & Architecture",
+      "Technology Implementation",
+      "Change Management",
+      "Digital Culture Development"
+    ],
+    "href": "/services/digital-transformation"
+  },
+  {
+    "id": "data-analytics",
+    "title": "Data Analytics",
+    "description": "Unlock the power of your data with advanced analytics solutions that provide actionable insights for informed decision-making.",
+    "icon": "BarChart3",
+    "features": [
+      "Data Strategy & Governance",
+      "Advanced Analytics & ML",
+      "Business Intelligence Dashboards",
+      "Predictive Modeling"
+    ],
+    "href": "/services/data-analytics"
+  },
+  {
+    "id": "process-optimization",
+    "title": "Process Optimization",
+    "description": "Streamline operations and boost efficiency through systematic process improvement and automation strategies.",
+    "icon": "Settings",
+    "features": [
+      "Process Mapping & Analysis",
+      "Workflow Automation",
+      "Quality Management Systems",
+      "Continuous Improvement Programs"
+    ],
+    "href": "/services/process-optimization"
+  }
+]

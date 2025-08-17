@@ -115,7 +115,19 @@ npm run lint
 ```
 
 ### Environment Setup
-The project uses environment variables for configuration. Create a `.env.local` file in the root directory if needed for any API keys or configuration.
+The project uses environment variables for configuration. Create a `.env.local` file in the root directory with the following variables:
+
+```bash
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://your-vercel-domain.vercel.app
+
+# For production, replace with your actual domain
+# NEXT_PUBLIC_SITE_URL=https://blitz-insights.com
+```
+
+**Important for Vercel Deployment:**
+- Set `NEXT_PUBLIC_SITE_URL` to your Vercel deployment URL
+- This ensures proper metadata and SEO configuration
 
 ## Processes Used
 
@@ -228,8 +240,15 @@ Content here...
 
 ## Deployment (Vercel)
 1. Push to GitHub
-2. Import to Vercel (Next.js). Static export ready
-3. Configure domain/preview as desired
+2. Import to Vercel (Next.js)
+3. Configure environment variables:
+   - `NEXT_PUBLIC_SITE_URL`: Your Vercel deployment URL
+4. Configure domain/preview as desired
+
+### Troubleshooting Deployment Issues
+- **404 NOT_FOUND Error**: Ensure `NEXT_PUBLIC_SITE_URL` is set correctly in Vercel environment variables
+- **API Routes Not Working**: This project uses API routes for the contact form, so it's not configured for static export
+- **Build Failures**: Check that all dependencies are properly installed and TypeScript compilation passes
 
 ## Lighthouse
 - Run against Home and a Blog post; expect 95+ Performance and 100 A11y/SEO depending on host and images

@@ -83,8 +83,8 @@ export default function RootLayout({
               </main>
               <Footer />
             </div>
+            <Analytics />
           </MotionProvider>
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>

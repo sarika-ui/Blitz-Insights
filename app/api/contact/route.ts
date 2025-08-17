@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
-import path from 'path';
 import { contactFormSchema } from '@/lib/validations';
 import type { Lead } from '@/types';
 
@@ -36,17 +33,12 @@ export async function POST(request: NextRequest) {
       source: 'contact_form',
     };
 
-    // Ensure the leads directory exists
-    const leadsDir = path.join(process.cwd(), 'data', 'leads');
-    if (!existsSync(leadsDir)) {
-      await mkdir(leadsDir, { recursive: true });
-    }
-
-    // Write lead to JSON file
-    const filename = `${lead.id}.json`;
-    const filepath = path.join(leadsDir, filename);
+    // For Vercel deployment, we'll log the lead instead of writing to file system
+    // since serverless functions have read-only file system
+    console.log('New lead received:', JSON.stringify(lead, null, 2));
     
-    await writeFile(filepath, JSON.stringify(lead, null, 2), 'utf8');
+    // In production, you might want to send this to a database or external service
+    // For now, we'll just log it for demonstration purposes
 
     // Log to console for debugging
     console.log('New lead received:', {

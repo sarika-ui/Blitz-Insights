@@ -232,7 +232,8 @@ Content here...
 - `data/case-studies.json`
 
 ### Leads (Contact Submissions)
-- Written to `data/leads/*.json` by `/api/contact`
+- Contact form submissions are logged to Vercel function logs
+- In production, consider integrating with a database or external service
 
 ## Accessibility
 - Semantic landmarks, keyboard-friendly UI, visible focus
@@ -249,6 +250,8 @@ Content here...
 - **404 NOT_FOUND Error**: Ensure `NEXT_PUBLIC_SITE_URL` is set correctly in Vercel environment variables
 - **API Routes Not Working**: This project uses API routes for the contact form, so it's not configured for static export
 - **Build Failures**: Check that all dependencies are properly installed and TypeScript compilation passes
+- **Vercel Configuration**: The project includes `vercel.json` for proper deployment settings
+- **File System**: Contact form submissions are logged to Vercel function logs (not written to file system)
 
 ## Lighthouse
 - Run against Home and a Blog post; expect 95+ Performance and 100 A11y/SEO depending on host and images

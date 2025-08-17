@@ -69,6 +69,106 @@ types/                     # domain types (Service, CaseStudy, Post, Lead)
 - `app/api/contact/route.ts`: validates input with Zod, writes `data/leads/*.json`
 - `lib/blog.ts`: loads/filters/paginates MDX posts and derives tags
 
+## How to Run the Project
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn package manager
+
+### Installation & Development
+```bash
+# Clone the repository
+git clone https://github.com/sarika-ui/Blitz-Insights.git
+cd Blitz-Insights
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open http://localhost:3000 in your browser
+```
+
+### Production Build
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+### Testing & Quality Assurance
+```bash
+# Run tests
+npm run test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Type checking
+npm run type-check
+
+# Linting
+npm run lint
+```
+
+### Environment Setup
+The project uses environment variables for configuration. Create a `.env.local` file in the root directory if needed for any API keys or configuration.
+
+## Processes Used
+
+### Development Workflow
+1. **Component-Driven Development**: Using shadcn/ui components for consistent, accessible UI primitives
+2. **Type-First Approach**: Strict TypeScript configuration ensures type safety across the application
+3. **Server-First Architecture**: Leveraging Next.js App Router for optimal performance with server components
+4. **Content Management**: MDX files with front-matter for blog posts and JSON files for structured data
+5. **Form Validation**: End-to-end validation using React Hook Form + Zod for both client and server-side validation
+
+### Quality Assurance Processes
+1. **Automated Testing**: Vitest for unit testing with coverage reporting
+2. **Code Quality**: ESLint with TypeScript rules and Prettier for consistent formatting
+3. **Git Hooks**: Husky + lint-staged for pre-commit quality checks
+4. **Type Safety**: Strict TypeScript configuration prevents runtime errors
+5. **Accessibility**: Built-in accessibility features with ARIA labels and semantic HTML
+
+### Content Management Process
+1. **Blog Posts**: MDX files with structured front-matter for metadata
+2. **Static Data**: JSON files for services, team, and case studies
+3. **Lead Management**: Contact form submissions stored as JSON files
+4. **SEO Optimization**: Metadata configuration for each page
+
+## How Design is Made Efficient
+
+### Performance Optimizations
+1. **Static Generation**: Pages are pre-rendered at build time for optimal performance
+2. **Server Components**: Reduced client-side JavaScript bundle size
+3. **Image Optimization**: Next.js built-in image optimization
+4. **Code Splitting**: Automatic code splitting by Next.js App Router
+5. **Minimal Client JS**: Server-first approach reduces client-side JavaScript
+
+### Design System Efficiency
+1. **Component Library**: shadcn/ui provides consistent, accessible components
+2. **Tailwind CSS**: Utility-first CSS framework for rapid development
+3. **Design Tokens**: Centralized design system with CSS custom properties
+4. **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+5. **Dark Mode**: Efficient theme switching with next-themes
+
+### Development Efficiency
+1. **Hot Reloading**: Fast development with Next.js hot reload
+2. **Type Safety**: TypeScript prevents errors during development
+3. **Component Reusability**: Modular component architecture
+4. **Consistent Styling**: Tailwind CSS ensures design consistency
+5. **Automated Workflows**: Git hooks and CI/CD integration
+
+### User Experience Efficiency
+1. **Fast Loading**: Static generation and optimized assets
+2. **Smooth Animations**: Framer Motion for performant animations
+3. **Accessibility**: Built-in accessibility features
+4. **Responsive Design**: Works seamlessly across all devices
+5. **SEO Optimized**: Proper metadata and semantic HTML
+
 ## Getting Started
 Prereqs: Node 18+
 

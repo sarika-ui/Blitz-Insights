@@ -1,19 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Section } from '@/components/ui/section';
-import { Linkedin, Twitter, ArrowRight, Users, Target, Lightbulb, Award } from 'lucide-react';
-import teamData from '@/data/team.json';
-import type { TeamMember } from '@/types';
+import { ArrowRight, Users, Target, Lightbulb, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'Learn about Blitz-Insights team, our mission, values, and commitment to transforming businesses through strategic consulting.',
 };
-
-const team = teamData as TeamMember[];
 
 export default function AboutPage() {
   return (
@@ -112,59 +107,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Team Section */}
-      <Section id="team">
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold">Meet Our Team</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experienced professionals with diverse backgrounds in strategy, 
-            technology, and business transformation.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member) => (
-            <Card key={member.id} className="group hover:shadow-lg transition-all duration-300">
-              <CardContent className="p-6 text-center space-y-4">
-                <div className="relative aspect-square rounded-full overflow-hidden mx-auto max-w-32">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-primary font-medium">{member.role}</p>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {member.bio}
-                </p>
-                <div className="flex justify-center space-x-3">
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${member.name}'s LinkedIn profile`}
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  )}
-                  {member.twitter && (
-                    <a
-                      href={member.twitter}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label={`${member.name}'s Twitter profile`}
-                    >
-                      <Twitter className="h-5 w-5" />
-                    </a>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
+
 
       {/* CTA Section */}
       <Section>

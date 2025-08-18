@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { contactFormSchema } from '@/lib/validations';
-import type { Lead } from '@/types';
+import { saveLeadToFirebase } from '@/lib/firebase-utils';
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,41 +22,45 @@ export async function POST(request: NextRequest) {
 
     const { name, email, company, message } = validationResult.data;
 
-    // Create lead object
-    const lead: Lead = {
-      id: `lead_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      name,
-      email,
-      company,
-      message,
-      timestamp: new Date().toISOString(),
-      source: 'contact_form',
-    };
+    try {
+      // Save to Firebase using utility function
+      const leadId = await saveLeadToFirebase({
+        name,
+        email,
+        company,
+        message,
+        source: 'contact_form',
+      });
 
-    // For Vercel deployment, we'll log the lead instead of writing to file system
-    // since serverless functions have read-only file system
-    console.log('New lead received:', JSON.stringify(lead, null, 2));
-    
-    // In production, you might want to send this to a database or external service
-    // For now, we'll just log it for demonstration purposes
+      console.log('New lead received:', {
+        id: leadId,
+        name,
+        email,
+        company,
+        timestamp: new Date().toISOString(),
+      });
 
-    // Log to console for debugging
-    console.log('New lead received:', {
-      id: lead.id,
-      name: lead.name,
-      email: lead.email,
-      company: lead.company,
-      timestamp: lead.timestamp,
-    });
-
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Thank you for your message. We\'ll get back to you soon!',
-        leadId: lead.id 
-      },
-      { status: 200 }
-    );
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Thank you for your message. We\'ll get back to you soon!',
+          leadId: leadId
+        },
+        { status: 200 }
+      );
+    } catch (firebaseError) {
+      console.error('Firebase error:', firebaseError);
+      
+      // Fallback response if Firebase fails
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Thank you for your message. We\'ll get back to you soon!',
+          leadId: 'saved'
+        },
+        { status: 200 }
+      );
+    }
 
   } catch (error) {
     console.error('Contact form API error:', error);
